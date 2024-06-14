@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+	.oderlist {
+		display:inline-block;
+		width: 250px;
+	}
+	
+	.final_button {
+		position: relative;
+		left: 180px;
+		top: 10px;
+	}
+	
+	fieldset {
+		border: 3px outset;
+		width: 500px;
+		background-color: rgb(255, 255, 230);
+		margin-top: 10px;
+	}
+	
+	fieldset legend {
+		font-weight: bold;
+		font-size: 20px;
+		color: purple;
+	}
+	
+	form ul li {
+		list-style: none;
+		margin-bottom : 10px;
+	}
+</style>
+
+</head>
+	<body>
+	<h1>Product Order List</h1>
+		<form action="id_pwT.jsp">
+			<fieldset style="width: 600px;">
+				<legend>개인정보</legend>
+					<ul>
+						<li>
+							<label for = "name" 
+									style="font-family: consolas;" 
+									class=reg>NAME</label>
+							<input type="text" 
+									id = "name" 
+									placeholder="여백 없이 입력" 
+									required="required"
+									style="width: 200px; 
+											height: 30px; 
+											border: 3px outset; 
+											border-radius: 10px;">				
+						</li>
+						<!-- <input> 태그의 required 속성은 폼 데이터(form data)가 
+						서버로 제출되기 전 반드시 채워져 있어야 하는 입력 필드를 명시 -->
+						<li>
+							<label for = "phone" 
+									style="font-family: consolas;"
+									class=reg>TELL</label>
+							<input type="tel" 
+									id = "phone" 
+									placeholder="연락가능한 번호" 
+									required="required"
+									style="width: 400px; 
+											height: 30px; 
+											border: 3px outset; 
+											border-radius: 10px;">				
+						</li>
+					</ul>
+			</fieldset>
+			
+			<fieldset style="width: 600px;">
+				<legend>배송정보</legend>
+					<ul>
+						<li>
+							<label for = "address" 
+									style="font-family: consolas;" 
+									class=reg>Addr</label>
+							<input type="text" 
+									id = "address"
+									style="width: 400px; 
+											height: 100px; 
+											border: 3px outset; 
+											border-radius: 10px;">				
+						</li>
+						<li>
+							<label style="font-family: consolas;"
+									class=reg>TELL</label>
+							<input type="text" id = "phone"
+									style="width: 400px; 
+											height: 30px; 
+											border: 3px outset; 
+											border-radius: 10px;">				
+						</li>
+						<li>
+							<label style="font-family: consolas;"
+									class=reg>MEMO</label>
+							<textarea style="border-radius: 10px;" rows="10" cols="55" 
+										placeholder="요청사항을 알려주세요"></textarea>
+							<!-- <input type="text" id = "memo"
+							style="width: 400px; height: 200px; border: 3px outset; border-radius: 10px;"> -->				
+						</li>
+					</ul>
+			</fieldset>
+			
+			<fieldset style="width: 600px;">
+			<legend>주문정보</legend>
+					<ul>
+						<li><label class = "oderlist">
+							<input type="CHECKBOX" id = "antigua">
+							과테말라 안티구아(100g)</label>
+							<input type="number" id = "anti_num" min = "0" max = "10" style="width: 40px; height: 20px;">
+							<small>EA</small>				
+						</li>
+						<li><label class = "oderlist">
+							<input type="CHECKBOX" id = "brazil">
+							브라질 옐로우버번(100g)</label>
+							<input type="number" id = "brazil_num" min = "0" max = "10" style="width: 40px; height: 20px;">	
+							<small>EA</small>			
+						</li>
+						<li><label class = "oderlist">
+							<input type="CHECKBOX" id = "jeju">
+							탐나는도다(블렌딩)(100g)</label>
+							<input type="number" id = "jeju_num" min = "0" max = "10" style="width: 40px; height: 20px;">
+							<small>EA</small>	
+						</li>
+					</ul>			
+			</fieldset>
+			
+			<div class = final_button>
+				<input type="submit" value = "주문하기" style="width: 100px; margin: 10px;">
+				<input type="reset" value = "다시작성" style="width: 100px; margin: 10px;">
+			</div>
+		
+		</form>
+	
+	</body>
+</html>

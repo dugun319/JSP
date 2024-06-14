@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	label.reg {
+		
+		display:inline-block;
+		width: 80px;
+		margin-bottom: 30px;
+		color: blue;
+		font-weight: bold;
+	}
+	
+	fieldset {
+		border: 3px outset;
+		width: 500px;
+		background-color: rgb(255, 255, 230);
+		margin-top: 30px;
+	}
+	
+	form ul li {
+		list-style: none;
+		margin : 15px;
+	}
+</style>
+</head>
+	<body>
+		<h1>여름방학 특강신청</h1>
+		<p style="font-family: consolas; font-weight: bold;">UI(User Ineterface) or UX(User eXperience)</p>
+		
+		<form action="">
+			<fieldset>
+				<legend>수강 신청인</legend>
+				<ul>
+					<li>
+						<label class = reg for = "id">학번</label>
+						<input type="text" id = "id" 
+						 style="width: 200px; height: 30px; border: 3px outset; border-radius: 10px;">
+					</li>
+					<li>
+						<label class = reg for = "name">이름</label>
+						<input type="text" id = "name" 
+						 style="width: 200px; height: 30px; border: 3px outset; border-radius: 20px;">
+					</li>
+					<li>
+						<label class = reg>***학과***</label>
+						<select id = "class" name = "class" style="width: 210px; height: 30px;">
+							<option value="architacture">건축공학</option>
+							<option value="mechanic">기계공학</option>
+							<option value="industry">산업공학</option>
+							<option value="electricity">전기공학</option>
+							<option value="computer" selected="selected">컴퓨터공학</option>
+							<option value="chemical">화학공학</option>
+						</select>
+					</li>
+				</ul>
+			</fieldset>		
+		</form>
+		
+	
+	</body>
+</html>
