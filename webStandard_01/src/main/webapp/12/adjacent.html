@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*  01 02   -> 01 pass 		02 target */
+	ul+ul {
+		color: blue;
+		font-weight: bold;
+	}
+	
+/*  01 02 03  -> 01&02 pass 		03 target 반드시 순서대로 이어져야 한다*/	
+	ul+ul+ul {
+		color: red;
+		font-weight: bold;
+	}
+	
+/*  01 02   -> 01 pass 		02 target */
+	h2+ul {
+		color: orange;
+		font-weight: bold;
+	}	
+
+</style>
+</head>
+	<body>
+		<section id = "container">
+			<h1>예약 방법 및 요금</h1>
+				<ul>
+					<li>직접통화</li>
+					<li>문자남기기</li>
+				</ul>
+				
+				<ul>
+					<li>1인 : 40,000 원</li>
+					<li>2인 : 60,000 원</li>
+					<li>3인 : 80,000 원</li>
+					<li>4인 : 90,000 원</li>
+				</ul>
+				
+			<h2>H2_01</h2>
+			<h2>H2_02</h2>
+			<h2>H2_03</h2>
+			<h2>H2_04</h2>
+				
+				<ul>
+					<li>1a : 10,000 원</li>
+					<li>2a : 30,000 원</li>
+					<li>3a : 50,000 원</li>
+					<li>4a : 70,000 원</li>
+				</ul>		
+		</section>
+	</body>
+</html>
