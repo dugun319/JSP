@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var a = new Array(4);
+	
+	document.write("a.length 1 = " + a.length + "<br>");
+	
+	a[0] = 12;
+	a[1] = 54;
+	a[2] = 2;
+	a[3] = 78;
+	
+	document.write("a.length 2 = " + a.length + "<br><hr>");
+	document.write("=== 전체조회1 ===" + "<br>");
+	for(var i in a) {
+		document.write("<br>a[" + i + "] = " + a[i]);
+	}
+	
+	document.write("<hr>");
+	document.write("=== 전체조회2 ===" + "<br>");
+	for(var i = 0 ; i < a.length ; i++) {
+		document.write("<br>a[" + i + "] = " + a[i]);
+	}
+	
+	document.write("<hr>");
+	document.write("=== Difference to JAVA ===" + "<br>");
+	a[4] = 8;
+	a[5] = 17;
+	a[6] = 9;
+	a[8] = 10;
+	
+	
+	document.write("=== 전체조회2 ===" + "<br>");
+	for(var i = 0 ; i < a.length ; i++) {
+		document.write("<br>a[" + i + "] = " + a[i]);
+	}
+	
+	
+
+</script>
+</head>
+	<body>
+		<h1>ARRAY_01 TYPE</h1>
+	</body>
+</html>

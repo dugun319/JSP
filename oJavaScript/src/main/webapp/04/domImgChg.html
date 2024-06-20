@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body {
+		text-align: center;
+	}
+</style>
+<script type="text/javascript">
+	function chk(num) {
+		document.images[0].src = "../images/" + num + ".gif";
+		document.images[1].src = "../images/" + (num + 1) + ".gif";
+	}
+
+</script>
+</head>
+	<body>
+		<h1>DOM IMAGE CHANGE</h1>
+			<p><img alt="3" src="../images/3.gif"></p>
+			<p><img alt="4" src="../images/4.gif"></p>
+			
+			<button onclick="chk(1)">목마</button>
+			<button onclick="chk(2)">우체통</button>
+			<button onclick="chk(3)">소방차</button>
+
+	</body>
+</html>

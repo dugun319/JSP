@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	overImg = new Array();
+	outImg	= new Array();
+	
+	for(var i = 0 ; i < 4 ; i++) {
+		overImg[i]	 = "../images/" + i + "over.jpg";
+		outImg[i]	 = "../images/" + i + "out.jpg";
+	}
+	
+	function onOver(num) {
+		document.images[num].src = overImg[num];
+	}
+	
+	function onOut(num) {
+		document.images[num].src = outImg[num];
+	}
+	
+</script>
+</head>
+	<body>
+		<h1>DOM IMAGE MENU EXCHANGE</h1>
+			<p><img alt="0" src="../images/0out.jpg" onmouseover="onOver(0)" onmouseout="onOut(0)"></p>
+			<p><img alt="1" src="../images/1out.jpg" onmouseover="onOver(1)" onmouseout="onOut(1)"></p>
+			<p><img alt="2" src="../images/2out.jpg" onmouseover="onOver(2)" onmouseout="onOut(2)"></p>
+			<p><img alt="3" src="../images/3out.jpg" onmouseover="onOver(3)" onmouseout="onOut(3)"></p>
+	</body>
+</html>

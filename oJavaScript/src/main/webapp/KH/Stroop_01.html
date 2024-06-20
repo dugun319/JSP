@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	section {
+		border: 2px solid darkblue;
+		border-radius: 10px;
+		width: 820px;
+		height: 810px;
+	}
+	#stimulus_field{
+		border: 2px solid darkblue;
+		border-radius: 15px;
+		width: 100%;
+		height: 500px;
+	}
+	
+	#result_field{
+		border: 2px solid darkblue;
+		border-radius: 15px;
+		width: 100%;
+		height: 200px;
+	}
+
+	#button_field{
+		text-align: center;
+		bottom: 50px;
+	}
+	
+	#button_field img{
+		width: 100%;
+		height: 100%;
+	}
+	
+	button {
+		border-radius: 25px;;
+		width: 200px;
+		height: 100px;
+	}
+</style>
+<script type="text/javascript">
+	function onOver(num) {
+		if(num == 0 ){
+			str = "red";
+		} else if (num == 1) {
+			str = "yellow";
+		} else if (num == 2) {
+			str = "green";
+		} else {
+			str = "blue";
+		}
+		
+		tmpStr = "../images/active_" + str + "_button.png"; 
+		document.images[num].src = tmpStr;
+	}
+	
+	function onOut(num) {
+		if(num == 0 ){
+			str = "red";
+		} else if (num == 1) {
+			str = "yellow";
+		} else if (num == 2) {
+			str = "green";
+		} else {
+			str = "blue";
+		}
+		
+		tmpStr = "../images/grey_" + str + "_button.png"; 
+		document.images[num].src = tmpStr;
+	}
+
+</script>
+</head>
+	<body>
+		<h1>STROOP BUTTON</h1>
+		<section>
+			<div id = "stimulus_field">
+			
+			</div>
+			
+			<div id = "result_field">
+			
+			</div>
+		
+			<div id = "button_field">
+				<button type="button"><img alt="grey_red_button" 		src="../images/grey_red_button.png"
+							onmouseover="onOver(0)" onmouseout="onOut(0)"></button>
+				<button type="button"><img alt="grey_yellow_button" 	src="../images/grey_yellow_button.png"
+							onmouseover="onOver(1)" onmouseout="onOut(1)"></button>
+				<button type="button"><img alt="grey_green_button" 	src="../images/grey_green_button.png"
+							onmouseover="onOver(2)" onmouseout="onOut(2)"></button>
+				<button type="button"><img alt="grey_blue_button" 	src="../images/grey_blue_button.png"
+							onmouseover="onOver(3)" onmouseout="onOut(3)"></button>
+			</div>
+		</section>
+	</body>
+</html>

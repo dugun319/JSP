@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var a = parseInt(prompt("Input the number between 1 to 7 :", ""));
+	
+	if(a<1 || a>7) {
+		
+		document.write("<h1>Wrong input, try again</h1>".fontcolor("red"));
+	} else if(isNaN(a)) {
+		document.write("<h2>Input is not a number, try again</h2>".fontcolor("Orange"));
+	} else {
+		switch(a) {
+			case 1 :
+				document.write("<h2>1을 입력하였습니다</h2>".fontcolor("red"));
+				break;
+			case 2 :
+				document.write("<h2>2을 입력하였습니다</h2>".fontcolor("orange"));
+				break;
+			case 3 :
+				document.write("<h2>3을 입력하였습니다</h2>".fontcolor("yellow"));
+				break;
+			case 4 :
+				document.write("<h2>4을 입력하였습니다</h2>".fontcolor("green"));
+				break;
+			case 5 :
+				document.write("<h2>5을 입력하였습니다</h2>".fontcolor("blue"));
+				break;
+			case 6 :
+				document.write("<h2>6을 입력하였습니다</h2>".fontcolor("navy"));
+				break;
+			case 7 :
+				document.write("<h2>7을 입력하였습니다</h2>".fontcolor("violet"));
+				break;
+				
+		}
+	}
+		
+</script>
+</head>
+	<body>
+		<h1>SWITCH 01</h1>
+	</body>
+</html>

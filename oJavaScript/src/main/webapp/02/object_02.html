@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var person = {
+		name 		: "HONG",
+		birthday 	: "20240620",
+		pId			: "1234567",
+		fullId		: function() {
+							return this.birthday + this.pId;
+					}
+	};
+	
+	document.write("<p>person.name -> " + person.name + "</p>")
+	document.write("<p>person.fullId -> " + person.fullId() + "</p>")
+	
+</script>
+</head>
+	<body>
+		<h1>OBJECT 02</h1>
+	</body>
+</html>

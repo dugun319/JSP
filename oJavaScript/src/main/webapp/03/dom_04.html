@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+	<body>
+		<h1>Delete the Event Listener</h1>
+		<p>Click or touch on below button with mouse cursor</p>
+		<button id = "btn">Delete Button</button>
+		<p id = "text"></p>
+		
+		<script type="text/javascript">
+		var btn = document.getElementById("btn");
+		btn.addEventListener("mouseover", mouseoverBtn);
+		btn.addEventListener("mouseout", mouseoutBtn);
+		btn.addEventListener("click", clickRemoveBtn);
+		
+		function mouseoverBtn() {
+			document.getElementById("text").innerHTML = "The cursor is on the button.";
+		}
+		
+		function mouseoutBtn() {
+			document.getElementById("text").innerHTML = "The cursor away from the button.";
+		}
+		
+		function clickRemoveBtn() {
+			btn.removeEventListener("mouseover", mouseoverBtn);
+			btn.removeEventListener("mouseout", mouseoutBtn);
+			document.getElementById("text").innerHTML = "Listeners have been removed.";
+		}
+		</script>
+	
+	</body>
+	
+	
+</html>

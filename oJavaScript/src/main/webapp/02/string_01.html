@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var len = 0;
+	do {
+		var str = prompt("Input under 6 characters : ", "");
+		len = str.length;
+		
+		if(len == 0) {
+			alert("Chech it out!");
+		} 		
+	} while (len > 6 || len < 1);
+	
+	document.write("<p>String : \"" + str + "\", Length : " + len + "</p>");
+		
+</script>
+</head>
+	<body>
+		<h1>STRING 01</h1>
+	</body>
+</html>

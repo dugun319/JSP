@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function changeColor() {
+		var setFirstItem = document.getElementsByName("first");
+		for(var i = 0 ; i < setFirstItem.length ; i++) {
+			setFirstItem.item(i).style.color = "red";
+		}
+		
+	}
+</script>
+</head>
+	<body>
+		<h1>DOM 03</h1>
+		<h4>Name attribute</h4>
+		<p name = "first">1st BLOCK</p>
+			<ul>
+				<li name = "first">1st item</li>
+				<li>2nd item</li>
+				<li name = "first">3rd item</li>
+				<li>4th item</li>
+				<li>5th item</li>
+			</ul>
+		<button onclick="changeColor()">Color would be changed to RED</button>
+	</body>
+</html>

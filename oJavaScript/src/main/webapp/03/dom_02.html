@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chRedColor() {
+		var str = document.getElementById("text");
+		str.style.color = "red";
+	}
+	
+	function chOrangeColor() {
+		var str = document.getElementById("text");
+		str.style.color = "orange";
+	}
+</script>
+</head>
+	<body>
+		<h1>DOM 02</h1>
+		<h2 id = "text">Basic Black</h2>
+		<button ondblclick="chRedColor()">RED</button>
+		<button onclick="chOrangeColor()">Orange</button>
+	</body>
+</html>
