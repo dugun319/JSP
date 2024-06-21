@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk() {
+		if(frm.name.value == 0) {
+			alert("Input your NAME!");
+			frm.name.focus();
+			return;
+		}
+		
+		if(frm.age.value == 0) {
+			alert("Input your AGE!");
+			frm.age.focus();
+			return;
+		} else if (isNaN(frm.age.value)) {
+			alert("Input your AGE with NUMBER!");
+			frm.age = null;
+			frm.age.focus();
+			return;
+		}
+		
+		var tempAdd = document.getElementById("addr");
+		
+		/* alert(tempAdd.value); */
+		if(tempAdd.value == 0) {
+			alert("Input your ADDRESS!");
+			tempAdd.focus();
+			return;
+		}
+		
+		
+	}
+
+</script>
+</head>
+	<body>
+		<form action="" name="frm">
+			<label>이름 : </label>
+			<input type="text" name="name" onfocus="this.value=''"><br><br>
+			<label>나이 : </label>
+			<input type="text" name="age" onfocus="this.value=''"><br><br>
+			<label>주소 : </label>
+			<input type="text" name="addr" id="addr" onfocus="this.value=''"><br><br>
+			<input type="button" value="Confirm" onclick="chk()">		
+		</form>
+	</body>
+</html>

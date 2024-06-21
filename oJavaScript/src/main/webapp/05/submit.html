@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	table {
+		background-color: rgb(255, 255, 200);
+		padding: 15px;
+	}
+	
+	tr, td {
+		padding: 15px;
+	}
+</style>
+<script type="text/javascript">
+	function chk() {
+		if(!frm.id.value) {
+			alert("Input ID");
+			frm.id.focus();
+			return false;
+		}
+		if(!frm.pass.value) {
+			alert("Input PASSWORD");
+			frm.pass.focus();
+			return false;
+		}
+		return true;
+	}
+</script>
+</head>
+	<body>
+		<h2>LOGIN GET / POST ******</h2>
+			<form action="https://www.naver.com" name="frm" method="get" onsubmit="return chk()">
+				<table border="1">
+					<tr>
+						<td>ID</td>
+						<td><input type="text" name="id"></td>
+					</tr>
+					<tr>
+						<td>PASSWORD</td>
+						<td><input type="password" name="pass"></td>
+					</tr>
+					<tr>
+						<td><input type="submit" value="Confirm"></td>
+						<td><input type="reset" value="Cancel"></td>
+					</tr>
+				
+				</table>
+			</form>
+	
+	</body>
+</html>

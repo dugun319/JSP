@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk() {
+		var str = "My favorite color is\n";
+		var vIndex = frm.color.selectedIndex;
+		
+		alert("vIndex -> " + vIndex 
+				+ "\nBackground color is " + frm.color[vIndex].value);
+		
+		if(vIndex == 6) {
+			document.body.style.backgroundColor = frm.color[vIndex].value;
+			document.body.style.color = frm.color[0].value;
+		} else {
+			document.body.style.backgroundColor = frm.color[vIndex].value;
+			document.body.style.color = frm.color[vIndex + 1].value;
+		}
+		
+	}
+</script>
+
+</head>
+	<body>
+		<h2>What is your favorite COLOR?</h2>
+			<form action="" name="frm">
+				<select name="color" onchange="chk()">
+					<option value="red">RED</option>
+					<option value="orange">ORANGE</option>
+					<option value="yellow">YELLOW</option>
+					<option value="green" selected="selected">GREEN</option>
+					<option value="blue">BLUE</option>
+					<option value="navy">NAVY</option>
+					<option value="purple">PURPLE</option>
+				</select>
+				<p><input type="button" value="Confirm" onclick="chk()"></p>
+			</form>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	*{
+		text-align: center;
+	}
+	
+	label {
+		font-family: arial;
+		font-size: 25px;
+		font-weight: bold;
+	}
+</style>
+<script type="text/javascript">
+	function chk() {
+		var str = "What movie do you like?\n";
+		
+		for(var i = 0 ; i < frm.movie.length ; i++) {
+			if(frm.movie[i].checked) {
+				str += frm.movie[i].value + "\n";
+			}
+		}
+		alert(str);
+	}
+	
+
+</script>
+</head>
+	<body>
+		<h2>좋아하는 영화를 선택하십시오</h2>
+			<form action="" name="frm">
+				<label for="m1">Limit</label>
+				<input type="checkbox" name="movie" id="m1" value="Limit">
+				<label for="m2">Hansan</label>
+				<input type="checkbox" name="movie" id="m2" value="Hansan">
+				<label for="m3">Hunt</label>
+				<input type="checkbox" name="movie" id="m3" value="Hunt">
+				<p><input type="button" value="Confirm" onclick="chk()"></p>
+			</form>
+	
+	</body>
+</html>

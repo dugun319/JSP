@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk() {
+		if(frm.id.value.length == 0) {
+			// frm 이름의 form에 있는 id name의 value를 참조
+			alert("Give your name");
+			frm.id.focus();
+			// frm 이름의 form에 있는 id name을 갖는 tag를 참조
+			return;
+		}
+		
+		if(frm.pass.value.length == 0) {
+			alert("Give your password");
+			frm.pass.focus();
+			return;
+		}
+	}
+
+</script>
+</head>
+	<body>
+		<form action="" name="frm">
+			<label>Name :</label>
+			<input type="text" name="id"><hr>
+			<label>Pass :</label>
+			<input type="password" name="pass">
+			<p><input type="button" value="Confirm" onclick="chk()"></p>
+		</form>
+	</body>
+</html>
