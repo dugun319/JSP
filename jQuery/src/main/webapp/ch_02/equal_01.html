@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	table{
+		table-layout: auto;
+		width: 75%;
+	}
+	
+	td{
+		padding: 20px;
+		text-align: center;
+		color: blue;
+		font-weight: bold;
+	}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+	jQuery(function(){
+		jQuery("td").eq(0).css("background-color", "yellow");
+		jQuery("td").eq(1).css("background-color", "purple");
+		jQuery("td").eq(2).css("background-color", "skyblue");
+		jQuery("td").eq(-3).css("background-color", "cyan");
+		jQuery("td").eq(4).css("background-color", "orange");
+			//jQuery("td").eq(-2).css("background-color", "purple");
+		jQuery("td").eq(5).css("background-color", "green");
+			//jQuery("td").eq(-1).css("background-color", "purple");
+			//jQuery("td").last().css("background-color", "purple");
+	});	
+</script>
+</head>
+	<body>
+		<table border="1">
+		
+			<tr>
+				<td>1구슬</td>
+				<td>2구슬</td>
+			</tr>
+			
+			<tr>
+				<td>3구슬</td>
+				<td>4구슬</td>
+			</tr>
+			
+			<tr>
+				<td>5구슬</td>
+				<td>6구슬</td>
+			</tr>
+		</table>
+	</body>
+</html>

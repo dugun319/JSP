@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.soptlight	{background-color: 	#ff0;	}
+	.redtext	{color: 			#f00;	}
+	.largetext	{font-size: 		30px;	}
+	.italictext	{font-style: 		italic;	}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		jQuery("span"			).addClass("redtext"	);
+		jQuery(".simpletext1"	).addClass("italictext"	);
+		jQuery("div"			).addClass("soptlight"	);
+		jQuery("#simpletext2"	).addClass("largetext"	);
+	});
+</script>
+</head>
+	<body>
+		<span	id=		"simpletext1">simple	</span>
+		<div 	class=	"simpletext1">jQuery	</div>
+		<span 	id=		"simpletext2">basic		</span>
+		<div 	id=		"simpletext3">example	</div>
+	</body>
+</html>
