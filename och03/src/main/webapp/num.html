@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk(){
+		if(!frm.num.value){
+			alert("You should enter the number");
+			frm.num.focus();
+			return false;
+		}
+		if(isNaN(frm.num.value)){
+			alert("Tou should enter the numeric value");
+			frm.num.focus();
+			frm.num.value = "";
+			return false;
+		}
+		return true;
+	}
+
+
+</script>
+</head>
+	<body>
+		<h1>INPUT the numbers</h1>
+			<!-- <form name="frm" action="num.jsp" onsubmit="return chk()"> -->
+			<form name="frm" action="num2.jsp" onsubmit="return chk()">
+				<p>Number : <input name="num"	type="text"/></p>
+				<input type="submit" value="Confirm"/>			
+			</form>
+	</body>
+</html>

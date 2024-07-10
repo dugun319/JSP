@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk(){
+		if(!frm.num1.value){
+			alert("Input the number 1!!!");
+			frm.num1.focus();
+			return false;
+		}
+		
+		if(isNaN(frm.num1.value)){
+			alert("You should input the numeric value!!!");
+			frm.num1.value = "";
+			frm.num1.focus();
+			return false;
+		}
+		if(!frm.num2.value){
+			alert("Input the number 1!!!");
+			frm.num2.focus();
+			return false;
+		}
+		
+		if(isNaN(frm.num2.value)){
+			alert("You should input the numeric value!!!");
+			frm.num2.value = "";
+			frm.num2.focus();
+			return false;
+		}
+		return true;
+		
+	}
+
+</script>
+</head>
+	<body>
+		<h2>Input TWO numbers</h2>	
+<!-- 			<form name="frm" action="cal.jsp" onsubmit="return chk()"> -->
+			<form name="frm" action="cal2.jsp" onsubmit="return chk()">
+				<p>Number 1 : <input name="num1" type="text"/></p>
+				<p>Number 2 : <input name="num2" type="text"/></p>
+				<input type="submit" value="Confirm">
+			</form>
+	</body>
+</html>
