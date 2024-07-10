@@ -26,10 +26,14 @@ public class Name3 extends HttpServlet {
 	 * HW01
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		request.setCharacterEncoding("utf-8");
 		String name = request.getParameter("name");
 		String addr = request.getParameter("addr");
+		
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
+		
 		out.println("<html><body>");
 		out.println(name + "님은 " + addr+"에 사시는 군요");
 		out.println("</body></html>");
