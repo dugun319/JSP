@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	function chk(){
+		
+		if(!frm.id.value)
+			{
+				alert("Enter your ID!");
+				frm.id.focus();
+				return false;
+			}
+		
+		if(!frm.password.value)
+		{
+			alert("Enter your PASSWORD!");
+			frm.password.focus();
+			return false;
+		}
+		
+		if(!frm.name.value)
+		{
+			alert("Enter your NAME!");
+			frm.name.focus();
+			return false;
+		}
+		
+		return true;
+	}
+</script>
+
+<style type="text/css">
+	table {
+		border: 1px solid;
+		background-color: aliceblue;
+	}
+	
+	th, td, tr{
+		border: 1px solid;
+		padding: 15px;
+	}
+</style>
+
+</head>
+	<body>
+		<h2>회원가입</h2>
+			<form action="member.jsp"
+				  name="frm"
+				  onsubmit="return chk()">
+				  <table>
+				  	<tr>
+				  		<th>U_ID</th>
+				  		<td><input name="id" 		type="text"></td>				  	
+				  	</tr>
+				  	
+				  	<tr>
+				  		<th>PASS</th>
+				  		<td><input name="password" 	type="password"></td>				  	
+				  	</tr>
+				  	
+				  	<tr>
+				  		<th>NAME</th>
+				  		<td><input name="name"	 	type="text"></td>				  	
+				  	</tr>
+				  	
+				  	<tr>
+				  		<th>HOBBY</th>
+				  		<td>
+				  			<select name =		"hobby"
+				  					multiple =	"multiple"
+				  					size =		"5">
+				  				<option value="바둑">바둑</option>
+				  				<option value="정치">정치</option>
+				  				<option value="축구">축구</option>
+				  				<option value="여행">여행</option>
+				  				<option value="게임">게임</option>
+				  				<option value="수면">수면</option>
+				  				<option value="요리">요리</option>			  			
+				  			</select>
+				  		</td>				  	
+				  	</tr>
+				  	
+				  	<tr>
+				  		<th>GENDER</th>
+				  		<td>
+				  			<p><input name="gender"	type="radio"	value="male" checked="checked"/>MALE</p>
+				  			<p><input name="gender"	type="radio"	value="female" />FEMALE</p>
+				  			<p><input name="gender"	type="radio"	value="other" />OTHER</p>
+				  		</td>				  	
+				  	</tr>
+				  	
+				  	<tr>
+				  		<td colspan="5">
+				  			<p><input type="submit" value="Confirm"/></p>
+				  			<p><input type="reset" value="Cancel"/></p>				  		
+				  		</td>				  	
+				  	</tr>
+				   
+				  
+				  </table>		
+			
+			</form>
+	</body>
+</html>
