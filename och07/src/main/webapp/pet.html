@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk(){
+		var nameID = document.getElementById("nameID");
+		
+		if(!nameID.value){
+			alert("What is YOUR N!A!M!E!");
+			nameID.focus();
+			return false;
+		}
+		return true;
+	}
+
+</script>
+</head>
+	<body>
+		<h1>좋아하는 반려동물은?</h1>
+		<form action="pet.jsp" onsubmit="return chk()">
+			<p>NAME : <input name="name" id="nameID" type="text"/></p>
+			<p>반려동물</p>
+			<p><input name="pet" type="checkbox" value="cat"/> CAT</p>
+			<p><input name="pet" type="checkbox" value="dog"/> DOG</p>
+			<p><input name="pet" type="checkbox" value="goldfish"/> GOLDFISH</p>
+			<p><input name="pet" type="checkbox" value="parrot"/> PARROT</p>
+			<p><input name="pet" type="checkbox" value="gecko"/> GECKO</p>
+			<input type="submit" value="Confirm"/>
+		</form>
+	</body>
+</html>

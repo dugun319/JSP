@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk(){
+		if(!frm.num.value){
+			alert("ENTER THE NUMBER!!!");
+			frm.num.focus();
+			return false;
+		}
+		
+		if(isNaN(frm.num.value)){
+			alert("You should enter the numeric value!");
+			frm.num.value = "";
+			frm.num.focus();
+			return false;
+		}
+		
+		return true;
+	}
+
+</script>
+</head>
+	<body>
+		<h2>Input the number</h2>
+			<form 	name="frm" 
+					action="Fibonacci"
+					onsubmit="return chk()">
+				<p>Number : <input name="num" type="text"/></p>
+				<input type="submit" value="Confirm"/>			
+			</form>
+	</body>
+</html>
