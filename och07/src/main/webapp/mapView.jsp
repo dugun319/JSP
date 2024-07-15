@@ -11,5 +11,6 @@
 		<h5>The address of "Jessica" is ${Address["Jessica"]}</h5>
 		<h5>The address of "Richard" is ${Address.Richard}</h5>
 		<h5>The address of "Smith" is ${Address.Smith}</h5>
+		<h5>The address of "Park" is ${Address.Park}</h5>
 	</body>
 </html>
