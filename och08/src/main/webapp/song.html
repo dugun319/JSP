@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk(){
+		if(!frm.name.value){
+			alert("What is your NAME?");
+			frm.name.focus();
+			return false;
+		}
+		
+		var movieTrue = false;
+		
+		/* if(frm.song.length == 0){
+			alert("좋아하는 음악이 하나도 없다!");
+		}else{
+			movieTrue = true;
+		} */
+		
+		for(var i = 0 ; i < frm.song.length ; i++){
+			if(frm.song[i].checked == true){
+				movieTrue = true;
+				break;
+			}
+		}
+		if(!movieTrue){
+			alert("좋아하는 음악이 하나도 없다!");
+			return false;
+		}
+		return movieTrue;
+		
+	}
+</script>
+</head>
+	<body>
+		<h2>What is your favorite MUSIC?</h2>
+			<form name="frm" action="song1.jsp" onsubmit="return chk()">
+				<p>NAME : <input name="name" type="text"/></p>
+				<p>MUSIC :</p> 
+					<p><input name="song" type="checkbox" value="Supernova">Supernova</p>
+					<p><input name="song" type="checkbox" value="Small girl">Small girl</p>
+					<p><input name="song" type="checkbox" value="How Sweet">How Sweet</p>
+					<p><input name="song" type="checkbox" value="소나기">소나기</p>
+					<p><input name="song" type="checkbox" value="Supernatural">Supernatural</p>
+					<p><input name="song" type="checkbox" value="Bubble Gum">Bubble Gum</p>
+					<p><input name="song" type="checkbox" value="고민중독">고민중독</p>
+					<p><input name="song" type="checkbox" value="Sticky">Sticky</p>
+					<p><input name="song" type="checkbox" value="Armageddon">Armageddon</p>					
+				<input type="submit" value="Confirm"/>
+			</form>
+	</body>
+</html>

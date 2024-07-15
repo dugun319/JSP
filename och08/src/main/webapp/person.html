@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	function chk(){
+		if(!frm.name.value){
+			alert("Enter your NAME!");
+			frm.name.focus();
+			return false;
+		}
+		
+		if(!frm.gender.value){
+			alert("Enter your GENDER!");
+			frm.gender.focus();
+			return false;
+		}
+		
+		if(!frm.age.value){
+			alert("How old are you?!");
+			frm.age.focus();
+			return false;
+		}
+		
+		if(isNaN(frm.age.value)){
+			alert("Enter your age in number!");
+			frm.age.value = ""
+			frm.age.focus();
+			return false;
+		}
+		return true;		
+	}
+</script>
+</head>
+	<body>
+		<h1>Personal Information</h1>
+	   <!-- <form name="frm" action="person1.jsp" onsubmit="return chk()"> -->
+	   <!-- <form name="frm" action="person2.jsp" onsubmit="return chk()"> -->
+	   <!-- <form name="frm" action="person3.jsp" onsubmit="return chk()"> -->
+	   <!-- <form name="frm" action="person4.jsp" onsubmit="return chk()"> -->
+			<form name="frm" action="person5.jsp" onsubmit="return chk()">
+				<p>NAME : <input name="name" 	type="text"/></p>
+				<p>GEN. : <input name="gender"	type="text"/></p>
+				<p>AGE. : <input name="age" 	type="text"/></p>			
+				<input type="submit" value="Confirm"/>
+			</form>
+	</body>
+</html>
