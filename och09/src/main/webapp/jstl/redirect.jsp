@@ -9,9 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-                         <!-- {"red","orange","yellow","green","blue","navy","violet"} -->
-	<c:forEach var="col" items="${color }">
-	     <font color="${col }">야호</font>
-	</c:forEach>
+  <c:redirect url="http://www.choongang.co.kr/"></c:redirect>
+
 </body>
 </html>

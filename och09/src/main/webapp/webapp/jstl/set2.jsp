@@ -9,9 +9,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-                         <!-- {"red","orange","yellow","green","blue","navy","violet"} -->
-	<c:forEach var="col" items="${color }">
-	     <font color="${col }">야호</font>
-	</c:forEach>
+	<c:set var="code"  value="1112"     scope="request"></c:set>
+	<c:set var="name"  value="온도계"     scope="request"></c:set>
+	<c:set var="price" value="16,000원"  scope="request"></c:set>
+	<jsp:forward page="set2Result.jsp"></jsp:forward>
+
 </body>
 </html>
