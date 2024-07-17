@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	table {
+		background-color: aliceblue;
+		border: 2px solid;
+	}
+	
+	tr:hover{
+		background-color: lightskyblue;
+	}
+	
+	th, tr, td{
+		border: 1px solid;
+		width: 100px;
+		padding: 10px;
+		text-align: center;
+	}
+</style>
+</head>
+	<body>
+		<h1>수정할 부서코드 입력</h1>
+			<form action="oraDeptRetrieve.jsp" method="post">
+			<table>
+				<tr>
+					<th>DEPT No.</th>
+					<td><input type="number"	name="deptno"	required="required"></td>
+				</tr>
+				<tr>
+					<td colspan="5">
+						<input type="submit" value="Confirm"/>
+					</td>
+				</tr>
+			</table>
+			</form>
+	</body>
+</html>

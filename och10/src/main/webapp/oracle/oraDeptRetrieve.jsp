@@ -1,5 +1,3 @@
-<%@page import="och10.Emp"%>
-<%@page import="java.util.ArrayList"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.DriverManager"%>
@@ -14,48 +12,35 @@
 </head>
 	<body>
 		<%
+			String deptno	= request.getParameter("deptno");
 			String driver	= "oracle.jdbc.driver.OracleDriver";
 			String url		= "jdbc:oracle:thin:@127.0.0.1:1521:xe";
-			String sql		= "SELECT empno, ename, job, sal FROM emp";
-			
-			System.out.println("sql -> " + sql);
+			String sql		= "SELECT deptno, dname, loc FROM dept WHERE deptno =" + deptno;
 						
 			Class.forName(driver);
 			Connection conn = DriverManager.getConnection(url, "scott", "tiger");
 			Statement stmt	= conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 			
-			// Collection declaration
-			ArrayList<Emp> al = new ArrayList<Emp>();
-			
 			if(rs.next()){
-				do{
-					Emp emp = new Emp();
-					emp.setEmpno(rs.getInt(1));
-					emp.setEname(rs.getString(2));
-					emp.setJob	(rs.getString(3));
-					emp.setSal	(rs.getInt(4));
-					al.add(emp);
-				}while(rs.next());
-				
-				request.setAttribute("al", al);
+				request.setAttribute("deptno", deptno);
+				request.setAttribute("dname", rs.getString("dname"));
+				request.setAttribute("loc", rs.getString("loc"));
 				
 				rs.close();
 				stmt.close();
 				conn.close();
 				
-				/* RequestDispatcher rd = request.getRequestDispatcher("oraResult05.jsp"); */
-				RequestDispatcher rd = request.getRequestDispatcher("ora05Result.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("oraDeptIn.jsp");
 				rd.forward(request, response);
-			}else{
-				out.println("?????????");
-				rs.close();
-				stmt.close();
-				conn.close();				
 			}
-		
-		
-		
+			
+			stmt.close();
+			conn.close();
 		%>
 	</body>
+<script type="text/javascript">
+	alert("없는 부서입니다");
+	location.href = "oraDeptUpdate.html";
+</script>
 </html>
