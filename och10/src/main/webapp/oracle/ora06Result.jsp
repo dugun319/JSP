@@ -1,12 +1,10 @@
-<%@page import="java.util.ArrayList"%>
-<%@page import="och10.Professor"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8"> 
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
 	table {
@@ -18,10 +16,6 @@
 		background-color: lightskyblue;
 	}
 	
-	th{
-		background-color: powderblue;
-	}
-	
 	th, tr, td{
 		border: 1px solid;
 		width: 100px;
@@ -30,25 +24,34 @@
 	}
 </style>
 </head>
-	<body>
-		<h1>MVC Model 2 View</h1>
+	<body> 
+		<h1>MVC View</h1>
 			<table>
 				<tr>
-					<th>교수번호</th>
+					<th>사번</th>
 					<th>이름</th>
 					<th>업무</th>
-					<th>급여</th>				
+					<th>메니저</th>
+					<th>입사일</th>
+					<th>급여</th>
+					<th>상여금</th>
+					<th>부서번호</th>				
 				</tr>
-		
-			<c:forEach var="prof" items="${al }">
-				<tr>
-					<td>${prof.profno	}</td>
-					<td>${prof.name 	}</td>
-					<td>${prof.position }</td>
-					<td>${prof.sal 		}</td>	
-				</tr>
-			</c:forEach>
 				
+				<c:forEach var="emp" items="${al }">
+					<tr>
+						<td>${emp.empno 	}</td>
+						<td>${emp.ename 	}</td>
+						<td>${emp.job 		}</td>
+						<td>${emp.mgr 		}</td>
+						<td>${emp.hiredate	}</td>
+						<td>${emp.sal 	 	}</td>
+						<td>${emp.comm 	 	}</td>
+						<td>${emp.deptno 	}</td>					
+					</tr>				
+				</c:forEach>
+								
 			</table>
+	
 	</body>
 </html>

@@ -19,7 +19,7 @@
 						
 			Class.forName(driver);
 			Connection conn = DriverManager.getConnection(url, "scott", "tiger");
-			Statement stmt = conn.prepareStatement(sql);
+			Statement stmt = conn.createStatement();
 			int result = stmt.executeUpdate(sql);
 			
 			if(result > 0){

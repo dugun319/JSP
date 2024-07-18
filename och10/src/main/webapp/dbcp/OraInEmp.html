@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	table {
+		background-color: aliceblue;
+		border: 2px solid;
+	}
+	
+	tr:hover{
+		background-color: lightskyblue;
+	}
+	
+	th, tr, td{
+		border: 1px solid;
+		width: 100px;
+		padding: 10px;
+		text-align: center;
+	}
+</style>
+</head>
+	<body>
+		<h2>사번정보 입력</h2>
+			<form action="oraSelect.jsp" method="post">
+				<table>
+					<tr>
+						<th>사번코드</th>
+						<td><input type="number"	name="empno"	required="required"></td>
+					</tr>
+					
+					<tr>
+					<td colspan="5">
+						<p><input type="submit" value="Confirm"/></p>
+						<p><input type="reset" 	value="Cancel"/></p>
+					</td>
+					</tr>
+				</table>	
+			</form>
+	</body>
+</html>

@@ -23,7 +23,7 @@
 		width: 100px;
 		padding: 10px;
 		text-align: center;
-	}
+	} 
 </style>
 </head>
 	<body>
