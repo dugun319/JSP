@@ -27,21 +27,32 @@ public class MemberDao {
 	
 	public int insert(MemberDto member) throws SQLException {
 		
-		Connection conn = this.getConnection();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int result = 0;
 		
 		String sql = 
 				"INSERT INTO scott.member1 (id, password, name, reg_date) VALUES (?, ?, ?, sysdate)"; 
-		PreparedStatement pstmt = conn.prepareStatement(sql);
 		
-		pstmt.setString(1, member.getId());
-		pstmt.setString(2, member.getPassword());
-		pstmt.setString(3, member.getName());
-		
-		int result = pstmt.executeUpdate();
-		
-		conn.close();
-		pstmt.close();
-	
+		try {
+			conn = this.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, member.getId());
+			pstmt.setString(2, member.getPassword());
+			pstmt.setString(3, member.getName());	
+			
+			result = pstmt.executeUpdate();			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			if(pstmt != null) {
+				pstmt.close();
+			}
+			if(conn != null) {
+				conn.close();
+			}
+		}
 		return result;
 	}
 }
