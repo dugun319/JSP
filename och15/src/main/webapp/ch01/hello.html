@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/httpRequest.js"></script>
+<script type="text/javascript">
+	function chk(){
+		var params = "name=" + encodeURIComponent(frm.name.value);
+	  //sendRequest(url(server PGM), 	params, callback, 	method);
+		sendRequest("hello.jsp", 		params, result, 	"POST");
+	}
+	
+	function result(){
+		if(httpRequest.readyState == 4){
+			if(httpRequest.status == 200){
+				var text1 	= httpRequest.responseText;
+				start		= text1.indexOf("<body>");
+				end			= text1.indexOf("</body>");
+				var text2	= text1.substring(start+6, end);
+				alert(text1);
+				alert(text2);
+			}else{
+				alert("Server Error");
+			}
+		}
+	}
+
+</script>
+</head>
+	<body>
+		<h2>Enter Your NAME</h2>
+		<form action="hello.jsp" name="frm">
+			<p><input type="text" name="name" /></p>
+			<p><input type="button" value="Confirm" onclick="chk()"/></p>		
+		</form>		
+	</body>
+</html>
