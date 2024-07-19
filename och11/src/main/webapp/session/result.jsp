@@ -7,10 +7,16 @@
 <title>Insert title here</title>
 </head>
 	<body>
+		
+		<h1>${param.chk }</h1>
 		<%
 			String chk = request.getParameter("chk");
+			if(chk.equals("success")){
+				out.println("회원가입을 축하합니다");
+			}else{
+				out.println("회원가입을 먼저 진행해주세요.");
+			}
 		%>
-		<h1><%=chk %></h1>
 		
 	</body>
 </html>
