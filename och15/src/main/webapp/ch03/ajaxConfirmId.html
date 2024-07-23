@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	jQuery(function(){
+		jQuery('#chk').click(function(){
+			var id			= jQuery('#id').val();
+							  //id가 id인 태그의 값을 가자온다.
+			var sendData	= 'id=' + id;
+				alert('sendData -> ' + sendData);
+			jQuery.ajax({
+				url			: 'confirmId.jsp'	,
+				data		: sendData			,
+				dataType	: 'text'			,
+				success		: function(data1){
+					jQuery('#msg').html(data1);
+					//id가 msg이 테크에 html형태로 집어 넣는다.
+				}
+			});
+		});	
+	});
+
+
+</script>
+</head>
+	<body>
+		<h1>MODEL1 회원가입</h1>
+		<form action="confirmId.jsp">
+			<P>ID : 		<input type="text"		name="id" 		id="id"/></P>
+					<input type="button"	value="중복체크"	id="chk">
+			<p><span id="msg"></span></p>
+			<P>Password : 	<input type="password"	name="pass" 	id="pass"/></P>
+			<P>NAME : 		<input type="text"		name="name" 	id="name"/></P>
+					<input type="submit"	value="confirm"/>		
+		</form>
+	</body>
+</html>
