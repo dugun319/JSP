@@ -10,6 +10,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+	body{
+		background-color: lightskyblue;
+	}
 	th {
 		width: 50px;
 		border: 1px solid;

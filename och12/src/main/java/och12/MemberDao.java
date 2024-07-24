@@ -264,6 +264,7 @@ public class MemberDao {
 	}
 	
 	public int delete(String id, String password) throws SQLException {
+		
 		int result = 0;
 		
 		Connection conn 		= null;
