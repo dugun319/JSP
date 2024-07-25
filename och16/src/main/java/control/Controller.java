@@ -20,6 +20,7 @@ import java.util.Properties;
 /**
  * Servlet implementation class Control
  */
+@SuppressWarnings("unused")
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;	
 	private Map<String, Object> commandMap = new HashMap<String, Object>();
@@ -68,7 +69,7 @@ public class Controller extends HttpServlet {
 			}
 		}
 		
-		Iterator keyIter	= pr.keySet().iterator();
+		Iterator<Object> keyIter	= pr.keySet().iterator();
 		
 		while(keyIter.hasNext()) {
 			
