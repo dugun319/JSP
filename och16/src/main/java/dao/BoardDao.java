@@ -230,14 +230,15 @@ public class BoardDao {
 	}
 	
 	public int getMax() throws SQLException {
+		
+		
+		
 		int result = 0;
 		
 		Connection conn 		= null;
 		PreparedStatement pstmt	= null;
 		ResultSet rs			= null;
-		String sql				= "SELECT MAX(num) FROM board";
-		
-		System.out.println("SQL -> " + sql);
+		String sql				= "SELECT NVL(MAX(num), 0) FROM board";
 		
 		try {
 			conn 	= this.getConnecction();
@@ -264,6 +265,146 @@ public class BoardDao {
 		
 		return result;		
 	}
+	
+	public int update(Board board) throws SQLException {
+		
+		int result = 0;
+		
+		Connection conn 		= null;
+		PreparedStatement pstmt = null;
+		String sql				= "UPDATE board SET "
+									+ "writer = ?, "
+									+ "subject = ?, "
+									+ "content = ?, "
+									+ "email = ?, "
+									+ "passwd = ?, "
+									+ "ip = ?, "
+									+ "reg_date = sysdate "
+								    + "WHERE num = ?";
+		
+		try {
+			
+			conn	= this.getConnecction();
+			pstmt	= conn.prepareStatement(sql);
+			
+			pstmt.setString(1, board.getWriter());
+			pstmt.setString(2, board.getSubject());
+			pstmt.setString(3, board.getContent());
+			pstmt.setString(4, board.getEmail());
+			pstmt.setString(5, board.getPasswd());
+			pstmt.setString(6, board.getIp());
+			pstmt.setInt(7, board.getNum());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());			
+		}
+		finally {
+			if(conn != null) {
+				conn.close();
+			}
+			if(pstmt != null) {
+				pstmt.close();
+			}
+		}
+		
+		return result;
+		
+	}
+	
+	public int insert(Board board, int maxNum) throws SQLException {
+		
+		int result = 0;
+		
+		Connection conn 		= null;
+		PreparedStatement pstmt = null;
+		String sql1				= "UPDATE board SET "
+									+ "re_step = re_step + 1 "
+									+ "WHERE ref = ?"
+									+ "and re_step > ?";		
+		
+		String sql2				= "INSERT INTO board( "
+									+ "num, "
+									+ "writer, "
+									+ "subject, "
+									+ "content, "
+									+ "email, "
+									+ "readcount, "
+									+ "passwd, "
+									+ "ref, "
+									+ "re_step, "
+									+ "re_level, "
+									+ "ip, "
+									+ "reg_date) "
+									+ "VALUES ("
+									+ "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, sysdate)";
+		
+		
+		try {
+			
+			int number = board.getNum();
+			
+			conn	= this.getConnecction();
+			
+									
+			if(number != 0) {
+				
+				System.out.println("BoardDao insert sql1 -> " + sql1);
+				System.out.println("BoardDao insert board.getRef() -> " + board.getRef());
+				System.out.println("BoardDao insert board.getRe_step() -> " + board.getRe_step());
+				
+				pstmt = conn.prepareStatement(sql1);
+				pstmt.setInt(1, board.getRef());
+				pstmt.setInt(2, board.getRe_step());
+				pstmt.executeUpdate();
+				pstmt.close();
+				
+				board.setRe_step(board.getRe_step() + 1);
+				board.setRe_level(board.getRe_level() + 1);
+			}
+			
+			if(number == 0) {
+				board.setRef(maxNum);
+			}
+			
+			pstmt	= conn.prepareStatement(sql2);
+			
+			pstmt.setInt(1, maxNum);
+			pstmt.setString(2, board.getWriter());			
+			pstmt.setString(3, board.getSubject());
+			pstmt.setString(4, board.getContent());
+			pstmt.setString(5, board.getEmail());
+			pstmt.setInt(6, board.getReadCount());
+			pstmt.setString(7, board.getPasswd());
+			pstmt.setInt(8, board.getRef());
+			pstmt.setInt(9, board.getRe_step());
+			pstmt.setInt(10, board.getRe_level());
+			pstmt.setString(11, board.getIp());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());			
+		}
+		finally {
+			if(conn != null) {
+				conn.close();
+			}
+			if(pstmt != null) {
+				pstmt.close();
+			}
+		}
+		
+		return result;
+	}
+	
+	public int delete(String num, String password) {
+		int result = 0;
+		
+		return result;
+	}
+	
 }
 
 	

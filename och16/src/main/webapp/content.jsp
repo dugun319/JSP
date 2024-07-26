@@ -49,7 +49,15 @@
 						value="목록"
 						onclick="location.href='list.do?num=${board.num }&pageNum=${pageNum}'" />
 				</td>
-			</tr>	
+			</tr>
+			
+			<tr>
+				<td colspan="5">
+					<input 	type="submit" value="confirm" onclick="return chk()"/>
+					<input 	type="reset"  value="Cancel"/>
+				</td>
+			</tr>
+				
 		</table>
 	</body>
 </html>

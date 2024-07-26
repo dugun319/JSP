@@ -84,7 +84,7 @@ public class Controller extends HttpServlet {
 				// 소멸 class
 				// Class commandClass		= Class.forName(className);
 				// Object commandInstance	= commandClass.newInstance(); 
-				
+				// 다양한 Class 들을 선언할 수 있다.
 				Class<?> commandClass			= Class.forName(className);
 				CommandProcess commandInstance	= 
 						(CommandProcess) commandClass.getDeclaredConstructor().newInstance();
