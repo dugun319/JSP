@@ -8,6 +8,32 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="style.css" type="text/css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	function getDeptName(p_num) {
+		alert("getwriterName p_num -> " + p_num);
+		
+		$.ajax({
+			url			: "ajaxGetDeptName.do",
+			data		: {num : p_num},
+			dataType	: 'text',
+			success		: function (data) {
+							alert(".ajax Data" + data);
+							/*	input Tag	*/
+							$('#writerName').val(data);
+							/*	span Tag	*/
+							$('#msg').html(data);
+							alert("getwriterName 2");
+						}
+		});
+		
+		alert("getwriterName 3");
+	}
+	
+	
+	
+
+</script>
 </head>
 	<body>
 		<h1>MEMBER BOARD</h1>
@@ -73,6 +99,12 @@
 				<c:if test="${endPage < pageCnt }">
 					<a href="list.do?pageNum=${startPage + blockSize }">[NEXT]</a>
 				</c:if>		
-			</div>			
+			</div>
+			
+			<h3>Ajax Name of Writer : <input type="text" id="writerName" readonly="readonly"></h3>
+			<h3>Message : <span id="msg"></span></h3>
+		
+			
+						
 	</body>
 </html>

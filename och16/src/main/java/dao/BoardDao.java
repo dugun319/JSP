@@ -399,10 +399,81 @@ public class BoardDao {
 		return result;
 	}
 	
-	public int delete(String num, String password) {
+	public int delete(String position, String num, String password) throws SQLException {
 		int result = 0;
 		
+		Connection conn 		= null;
+		PreparedStatement pstmt = null;
+		String sql				= "DELETE FROM board WHERE num = ?";
+		BoardDao bd				= BoardDao.getInstance();
+		
+		try {
+			conn	= this.getConnecction();
+			pstmt	= conn.prepareStatement(sql);
+			//pstmt.setString(1, position);
+			pstmt.setString(1, num);
+			
+			System.out.println("position ->" + position);
+			System.out.println("num ->" + num);			
+			
+			if(bd.passCheck(num, password)) {
+				result 	= pstmt.executeUpdate();
+				System.out.println("pstmt -> " + pstmt.toString());
+				System.out.println("public int delete result = pstmt.executeUpdate(); -> " + result);
+			}
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());			
+		}
+		finally {
+			if(conn != null) {
+				conn.close();
+			}
+			if(pstmt != null) {
+				pstmt.close();
+			}
+		}
 		return result;
+	}
+	
+	public boolean passCheck(String num, String password) throws SQLException {
+		boolean flag = false;
+		
+		Connection conn 		= null;
+		PreparedStatement pstmt = null;
+		String sql				= "SELECT passwd FROM board WHERE num = ?";
+		ResultSet rs			= null;
+		String dbPassword		= null;
+		
+		try {
+			conn		= this.getConnecction();
+			pstmt		= conn.prepareStatement(sql);
+			pstmt.setString(1, num);
+			rs			= pstmt.executeQuery();
+			
+			if(rs.next()) {
+				dbPassword	= rs.getString(1);
+			}
+			
+			if(dbPassword.equals(password)) {
+				flag = true;
+			}
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());			
+		}
+		finally {
+			if(conn != null) {
+				conn.close();
+			}
+			if(pstmt != null) {
+				pstmt.close();
+			}
+		}
+		
+		System.out.println("passCheck flag -> " + flag);
+		
+		return flag;
 	}
 	
 }
