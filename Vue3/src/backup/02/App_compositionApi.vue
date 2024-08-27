@@ -2,8 +2,11 @@
   <div>
     <h2>Reactive Message</h2>
     <p>{{ reactiveMessage }}</p>
+    <button v-on:clink="addReactiveMessage">addReactiveMessage</button>
     <h2>Simple Message</h2>
     <p>{{ simpleMessage }}</p>
+    <button v-on:clink="addSimpleMessage">addSimpleMessage</button>
+
   </div>
 </template>
 

@@ -1,9 +1,6 @@
 <template>
   <div>
-    <p>book.author: {{ Book.author }}</p>
-    <p>book.title: {{ Book.title }}</p>
-    <p>author: {{ author }}</p>
-    <p>title: {{ title }}</p>
+
   </div>
 </template>
 
@@ -18,5 +15,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+#modifiers div,
+#modifiers p,
+#modifiers span {
+  padding: 40px;
+}
+#modifiers div {
+  background-color: #ccc;
+}
+#modifiers p {
+  background-color: #999;
+}
+#modifiers span {
+  background-color: #666;
+  display: block;
+}
 </style>
