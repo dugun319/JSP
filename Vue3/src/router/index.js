@@ -6,6 +6,7 @@ import NestedHomeView from '@/views/nested/NestedHomeView.vue'
 import NestedOneView from '@/views/nested/NestedOneView.vue'
 import NestedTwoView from '@/views/nested/NestedTwoView.vue'
 import MemberListView from '@/views/members/MemberListView.vue'
+import MemberCreateView from '@/views/members/MemberCreateView.vue'
 
 const routes = [
   {
@@ -24,6 +25,12 @@ const routes = [
     path: '/members',
     name: 'MemberList',
     component: MemberListView
+  },
+
+  {
+    path: '/members/create',
+    name: 'MemberCreate',
+    component: MemberCreateView
   },
 
   {
@@ -47,8 +54,7 @@ const routes = [
         path: 'two',
         name: 'NestedTwo',
         component: NestedTwoView
-      },
-
+      }
     ]
   }
 ]

@@ -32,7 +32,7 @@
             </li>
             <li class="nav-item">
               <RouterLink class="nav-link" active-class="active" to="/members">
-                회원 관리
+                차량관리
               </RouterLink>
             </li>
             <li class="nav-item">
@@ -41,7 +41,7 @@
           </ul>
           <div class="d-flex">
             <button class="btn btn-outline-light" type="button" @click="goMemberCreatePage">
-              회원등록
+              차량등록
             </button>
           </div>
         </div>

@@ -1,5 +1,6 @@
 <template>
   <AppCard>
+    <template v-slot:header>차량번호{{ id }}</template>
     <h5 class="card-title">{{ id }}</h5>
     <p class="card-text">{{ name }}</p>
     <p class="text-muted">{{ sal }}</p>
