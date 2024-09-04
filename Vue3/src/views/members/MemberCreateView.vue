@@ -39,6 +39,9 @@ const save = () => {
       // form.sal,
       // form.name
     })
+    router.push({
+      name: 'MemberList'
+    })
   } catch (error) {
     console.error(error)
   }

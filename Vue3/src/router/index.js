@@ -7,6 +7,7 @@ import NestedOneView from '@/views/nested/NestedOneView.vue'
 import NestedTwoView from '@/views/nested/NestedTwoView.vue'
 import MemberListView from '@/views/members/MemberListView.vue'
 import MemberCreateView from '@/views/members/MemberCreateView.vue'
+import MemberDetailView from '@/views/members/MemberDetailView.vue'
 
 const routes = [
   {
@@ -31,6 +32,13 @@ const routes = [
     path: '/members/create',
     name: 'MemberCreate',
     component: MemberCreateView
+  },
+
+  {
+    path: '/members/detail/:id',
+    name: 'MemberDetail',
+    component: MemberDetailView,
+    props: true
   },
 
   {

@@ -13,13 +13,19 @@
         </MemberItem>
       </div>
     </div>
+    <AppCard>
+      <MemberDetailView :id="1"></MemberDetailView>
+    </AppCard>
   </div>
 </template>
 
 <script setup>
 import { getMembers } from '@/api/members'
+import AppCard from '@/components/AppCard.vue'
 import MemberItem from '@/components/members/MemberItem.vue'
+import router from '@/router'
 import { ref } from 'vue'
+import MemberDetailView from './MemberDetailView.vue'
 // import { useRouter } from 'vue-router';
 
 // const router = useRouter()
@@ -37,6 +43,19 @@ const fetchMembers = async () => {
 }
 
 fetchMembers()
+
+const goMemberDetail = (id) => {
+  // router.push('/posts/' + id)
+  console.log('MemberListView goMemberDetail id -> ', id)
+  console.log('MemberListView goMemberDetail type of id -> ', typeof id)
+
+  router.push({
+    name: 'MemberDetail',
+    params: {
+      id: id
+    }
+  })
+}
 </script>
 
 <style lang="scss" scoped></style>
