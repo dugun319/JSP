@@ -8,6 +8,7 @@ import NestedTwoView from '@/views/nested/NestedTwoView.vue'
 import MemberListView from '@/views/members/MemberListView.vue'
 import MemberCreateView from '@/views/members/MemberCreateView.vue'
 import MemberDetailView from '@/views/members/MemberDetailView.vue'
+import MemberEditView from '@/views/members/MemberEditView.vue'
 
 const routes = [
   {
@@ -38,6 +39,13 @@ const routes = [
     path: '/members/detail/:id',
     name: 'MemberDetail',
     component: MemberDetailView,
+    props: true
+  },
+
+  {
+    path: '/members/:id/edit',
+    name: 'MemberEdit',
+    component: MemberEditView,
     props: true
   },
 

@@ -17,3 +17,15 @@ export function getMemberById(id) {
   console.log('getMemberById id -> ', id)
   return axios.get('http://localhost:8388/restApi/v15/members/' + id)
 }
+
+export function updateMember(id, data) {
+  console.log('updateMember typeof id -> ', typeof id)
+  console.log('updateMember id -> ', id)
+  return axios.put('http://localhost:8388/restApi/v21/members/' + id, data)
+}
+
+export function deleteMember(id) {
+  console.log('updateMember typeof id -> ', typeof id)
+  console.log('updateMember id -> ', id)
+  return axios.delete('http://localhost:8388/restApi/v21/deleteMember/' + id)
+}

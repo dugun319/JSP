@@ -7,7 +7,7 @@
         :value="sal"
         @input="$emit('update:sal', $event.target.value)"
         class="form-control"
-        :id="sal"
+        id="sal"
       />
     </div>
 

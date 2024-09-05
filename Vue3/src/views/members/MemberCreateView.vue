@@ -2,13 +2,13 @@
   <div>
     <h2>차량 등록</h2>
     <hr class="my-4" />
+    <!-- submit.prevent => fomr의 기본적인 동작은 value를 서버로 전송
+      전송과 동시에 화면의 데이터가 리셋되데, .prevent 는 
+      이러한 기본동작을 제어함  -->
     <MemberForm v-model:sal="form.sal" v-model:name="form.name" @submit.prevent="save">
-      <!-- submit.prevent => fomr의 기본적인 동작은 value를 서버로 전송
-    전송과 동시에 화면의 데이터가 리셋되데, .prevent 는 
-    이러한 기본동작을 제어함  -->
       <template #actions>
         <button type="button" class="btn btn-outline-primary me-2" @click="goListPage">LIST</button>
-        <button type="button" class="btn btn-outline-secondary me-2">SAVE</button>
+        <button class="btn btn-outline-secondary">SAVE</button>
       </template>
     </MemberForm>
   </div>
